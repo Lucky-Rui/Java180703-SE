@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8">
+       <title></title>
+       <style type="text/css">
+          
+       </style>
+       <script type="text/javascript">
+          function clickMe() {
+             //document.getElementById( id属性值);
+             var input1 = document.getElementById("inputId");
+             console.log(input1);
+             console.log(input1.value);
+             //document.getElementsByTagName("标签名")；
+             //标签可能有多个，这里返回的是一个数组
+             var inputs = document.getElementsByTagName("input");
+             console.log(inputs);
+             //可以打印返回标签数组指定下标的标签
+             console.log(inputs[1]);
+          }
+       </script>
+   </head>
+   <body>
+       <input id="inputId" type="text" value="Java JS"/><br/>
+       <input type="button" onclick="clickMe()"  value="点我"/>
+       <!--<button onclick="clickMe()">点我</button>-->
+   </body>
+
+</html>

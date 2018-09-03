@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.ok{
+				color: green;
+			}
+			.error{
+				color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			function checkZhanghao(){
+				var reg =/^[a-zA-Z0-9_-]{5,10}$/;
+				var zhanghao = document.getElementById("input_zh").value;
+				var span_zh = document.getElementById("rule_zh");
+			    if (!reg.test(zhanghao)) {
+			    	span_zh.className="error";
+			    }else{
+			    	span_zh.className="ok";
+			    }
+			}
+			function checkMima(){
+				var reg =/^[a-zA-Z0-9_-]{10,20}$/;
+				var mima = document.getElementById("input_mm").value;
+				var span_mm = document.getElementById("rule_mm");
+			    if (!reg.test(mima)) {
+			    	span_mm.className="error";
+			    }else{
+			    	span_mm.className="ok";
+			    }
+			}
+		</script>
+	</head>
+	<body>
+		账号：<input style="text" onblur="checkZhanghao()" id="input_zh" /> <span id="rule_zh">5-10位字母、数字、下划线</span>
+		<br />
+		密码：<input style="text" onblur="checkMima()" id="input_mm" /> <span id="rule_mm">10-20位字母、数字、下划线</span>
+		<p><input type="button" id="login" value="登陆" /></p>
+	</body>
+</html>

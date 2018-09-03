@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*有一些标签，默认是带有padding，比如ul标签*/
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				background-color: rgb(0, 102, 102);
+			}
+			/*鼠标在li上悬停时候,让li向右上方各偏移2px,实现抖动效果*/
+			li:hover{
+			   position: relative;
+			   left:2px;/*左边往右偏移2px*/
+			   top:-2px;/*上边往上偏移2px*/
+			}
+			
+			ul {
+				border: 2px solid red;
+				width: 726px;
+				/*去掉ul中小圆点*/
+				list-style-type: none;
+				/*上下20px,auto实现左右自动居中*/
+				margin: 20px auto;
+			}
+			
+			img {
+				width: 200px;
+				height: 200px;
+			}
+			
+			li {
+				float: left;
+				border: 1px solid red;
+				padding: 10px;
+				/*内边距*/
+				margin: 10px;
+				/*外边距*/
+				background-color: rgb(204, 204, 204);
+			}
+			
+			p {
+				text-align: center;
+				/*文字水平居中*/
+			}
+			
+			.clearFloat {
+				clear: both;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li>
+				<img src="../images/01.jpg" />
+				<p>Java学习教程</p>
+			</li>
+			<li>
+				<img src="../images/02.jpg" />
+				<p>Java学习教程</p>
+			</li>
+			<li>
+				<img src="../images/03.jpg" />
+				<p>Java学习教程</p>
+			</li>
+			<li>
+				<img src="../images/04.jpg" />
+				<p>Java学习教程</p>
+			</li>
+			<li>
+				<img src="../images/05.jpg" />
+				<p>Java学习教程</p>
+			</li>
+			<li>
+				<img src="../images/06.jpg" />
+				<p>Java学习教程</p>
+			</li>
+			<div class="clearFloat"></div>
+		</ul>
+	</body>
+
+</html>

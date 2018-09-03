@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//特殊字符集
+			//+ : 前面那个单元出现1次或多次
+			var reg = /[0-9]+/;
+			var str = "hello2333-24";// ["2333"]
+			var reg = /[0-9]+/g;// 全局匹配global
+			var str = "hello2333-24";// ["2333", "24"]
+			
+			//* ：前面那个单元出现0次或者多次（任意次数）
+			var reg = /go*gle/;
+			var str = "gooooooooooooooogle";//["gooooooooooooooogle"]
+			var str = "gogle";// ["gogle"]
+			var str = "ggle";// ["ggle"]
+			var result= str.match(reg);
+			console.log(result);
+			
+			//?: 前面那个单元出现0次或1次
+			var reg = /wo?rld/;
+			var str = "wrld";//["wrld"]
+			var str = "world";//["world"]
+			var str = "woorld";//null
+			
+			//. :匹配除了换行符\n之外的任何一个字符  .*
+			var reg = /.*/;
+			var str = "^#$$#$^&458hdfihf7y80\nY*$Y$&$*#HFDIOSHF";// ["^#$$#$^&458hdfihf7y80"]
+			//| : 两项之间的一个选项
+			var reg = /milk|fish/;
+			var str = "cat like eat fish and milk";//["fish"]
+			//\ : 这个符号是用来转义
+			// 把符号的特殊意义给去掉，只保留最本质的意思  \.
+			var reg = /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/;
+			var str = "192.168.33.4";//["192.168.33.4"]
+			//$ ： 匹配输入字符串的结尾位置
+			//^ : 匹配输入字符串的开始位置
+			var reg = /^banana/;//这个正则要求banana出现在字符串的开始位置   null
+			var reg = /^monkey/;//["monkey"]
+			var reg = /banana$/;//["banana"]
+			var reg = /like$/;//null
+			var str = "monkey and banana";
+			var reg = /13[0-9]{9}/;
+			var str = "13121212121java";
+			//^和$限制被匹配的内容进行“完整匹配”，前后不再有其他的字符
+			var reg = /^13[0-9]{9}$/;
+			var str = "13341267121";//["13341267121"]
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

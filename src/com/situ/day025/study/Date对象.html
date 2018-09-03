@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//Date
+			var date1 = new Date();//当前日期
+			console.log(date1);//Mon Aug 20 2018 11:28:21 GMT+0800 (中国标准时间)
+			var date2 = new Date("2016/12/2 12:34:57");
+			console.log(date2);//Fri Dec 02 2016 12:34:57 GMT+0800 (中国标准时间)
+			var year = date1.getFullYear();
+			console.log("year: " + year);
+			var month = date1.getMonth();
+			console.log("month: " + month);
+			var day = date1.getDate();
+			console.log("day: " + day);
+			console.log(year + "年" + (month + 1) + "月" +  day + "日");
+			console.log(date1.toLocaleDateString());// 2018/8/20
+			
+			console.log(date1.toLocaleTimeString());// 上午11:32:13
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

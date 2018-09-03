@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//模式修正符组成
+			
+			//i:忽略大小写
+			var reg = /[a-z]+/i;
+			var str = "helloBEIJING";//["helloBEIJING"]
+			
+			//g:全局匹配global
+			var reg = /[0-9]+/g;
+			var str = "2018-80-20 17:40:45";//["2018", "80", "20", "17", "40", "45"]
+			
+			var result= str.match(reg);
+			console.log(result);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>下拉列表左右选择</title>
+		<script type="text/javascript" src="../../../../../lib/jquery/jquery-1.11.1.js"></script>
+		<script>
+			$(function() {
+				//1.选中单击去右边
+				$("#selectOneToRight").click(function() {
+					$("#left option:selected").appendTo($("#right"));
+				});
+
+				//2.单击全部去右边
+				$("#selectAllToRight").click(function() {
+					$("#left option").appendTo($("#right"));
+				});
+
+				//3.选中双击去右边
+				$("#left option").dblclick(function() {
+					$("#left  option:selected").appendTo($("#right"));
+				});
+			});
+			$(function() {
+				//1.选中单击去左边
+				$("#selectOneToLeft").click(function() {
+					$("#right option:selected").appendTo($("#left"));
+				});
+
+				//2.单击全部去左边
+				$("#selectAllToLeft").click(function() {
+					$("#right option").appendTo($("#left"));
+				});
+
+				//3.选中双击去左边
+				$("#right option").dblclick(function() {
+					$("#right  option:selected").appendTo($("#left"));
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<table border="1" width="600" align="center">
+			<tr>
+				<td>分类名称</td>
+				<td><input type="text" name="cname" value="手机数码" /></td>
+			</tr>
+			<tr>
+				<td>分类描述</td>
+				<td><textarea name="cdesc" rows="4" cols="20">手机数码类商品</textarea></td>
+			</tr>
+			<tr>
+				<td>分类商品</td>
+				<td>
+					<span style="float: left;">
+						<font color="green" face="宋体">已有商品</font><br/>
+						<select multiple="multiple" style="width: 100px;height: 200px;" id="left" >
+							<option>IPhoneX</option>
+							<option>小米6</option>
+							<option>荣耀v10</option>
+							<option>华为mate10</option>
+							<option>三星S9</option>
+							<option>ViVO X21</option>
+						</select>
+						<p><a href="#" style="padding-left: 20px;" id="selectOneToRight">&gt;&gt;</a></p>
+						<p><a href="#" style="padding-left: 20px;" id="selectAllToRight">&gt;&gt;&gt;</a></p>
+					</span>
+					<span style="float: right;">
+						<font color="red" face="宋体">未有商品</font><br/>
+						<select multiple="multiple" style="width: 100px;height: 200px;" id="right">
+					 		<option>OPPO R80</option>
+							<option>华为Mate 60</option>
+							<option>华为P50</option>
+							<option>Iphone XXX</option>
+						</select>
+						<p><a href="#" style="padding-right: 20px;" id="selectOneToLeft">&lt;&lt;</a></p>
+						<p><a href="#" style="padding-right: 20px;" id="selectAllToLeft">&lt;&lt;&lt;</a></p>
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<a><input type='submit' value="修改"/></a>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

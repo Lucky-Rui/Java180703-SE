@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="../../../../lib/bootstrap-3.3.7-dist/js/bootstrap.js">
+    	window.onload = function(){
+    	var div = document.getElementsByClassName('run')[0];
+        var imgs = div.getElementsByClassName('runimg');//图片
+        var index = div.getElementsByClassName('index')[0];
+        var indexs = index.getElementsByTagName('a');//索引
+        var leftmove = div.getElementsByClassName('left')[0];//左切换
+        var rightmove = div.getElementsByClassName('right')[0];//右切换
+ 
+        for(var i = 0 ; i < indexs.length; i ++){
+            indexs[i].s = i; 
+        }
+        
+        var count = 0;
+        //轮播
+        var run = setInterval(start,1500); 
+        
+        //鼠标移入移除事件绑定
+        div.addEventListener("mouseover",function(){
+            clearInterval(run);
+        },false);
+ 
+        div.addEventListener("mouseout",function(){
+            clearInterval(run);
+            run = setInterval(start,1500);
+        },false);
+        
+        //上一张、下一张按钮事件绑定
+        leftmove.addEventListener("click",function(){
+            imgs[count].style.opacity= 0;
+            indexs[count].style.backgroundColor = "rgba(0,0,0,0.4)";
+            count --;
+            if(count == -1){
+                count = 4;
+            }
+            imgs[count].style.opacity = 1;
+            indexs[count].style.backgroundColor = "rgba(255,255,255,0.4)";
+        },false);
+ 
+        rightmove.addEventListener("click",start,false);
+ 
+        //点击索引小圆点事件绑定
+        index.addEventListener('click',function(e){
+            var event = e || window.event;
+            var target = event.target || event.srcElement;
+            indexs[count].style.backgroundColor = "rgba(0,0,0,0.4)";
+            imgs[count].style.opacity = 0;
+            count = target.s;
+            imgs[count].style.opacity = 1;
+            indexs[count].style.backgroundColor = "rgba(255,255,255,0.4)";
+        },false);
+ 
+        //轮播函数
+        function start (){
+            imgs[count].style.opacity= 0;
+            indexs[count].style.backgroundColor = "rgba(0,0,0,0.4)";
+            count ++;
+            if(count == 5){
+                count = 0;
+            }
+            imgs[count].style.opacity = 1;
+            indexs[count].style.backgroundColor = "rgba(255,255,255,0.4)";
+        }
+    	}
+    </script>
+    <title>小米商城</title>
+</head>
+<body>
+    <!--顶部-->
+    <header>
+        <a href="#"><input type="image" src="img/顶部活动.png" /></a>
+    </header>
+    <!--导航栏-->
+    <nav>
+        <div class="center">
+            <div class="left">
+                <a href="#">小米商城</a><span>|</span>
+                <a href="#">MIUI</a><span>|</span>
+                <a href="#">IOT</a><span>|</span>
+                <a href="#">云服务</a><span>|</span>
+                <a href="#">金融</a><span>|</span>
+                <a href="#">有品</a><span>|</span>
+                <a href="#">小爱开放平台</a><span>|</span>
+                <a href="#">政企服务</a>
+            </div>
+            <div class="right">
+                <div class="shoppingCart">
+                    <a href="#">购物车(0)</a>
+                </div>
+                <div class="login">
+                    <a href="#">消息通知</a><span>|</span>
+                    <a href="#">注册</a><span>|</span>
+                    <a href="#">登录</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--主体内容开始-->
+    <section>
+        <!--logo 导航 搜索栏开始-->
+        <div class="top">
+            <a class="logo" href="#"><img src="img/logo.png" alt="logo"></a>
+            <div class="nav">
+                <a href="#">小米手机</a>
+                <a href="#">红米</a>
+                <a href="#">电视</a>
+                <a href="#">笔记本</a>
+                <a href="#">盒子</a>
+                <a href="#">新品</a>
+                <a href="#">路由器</a>
+                <a href="#">智能硬件</a>
+                <a href="#">服务</a>
+                <a href="#">社区</a>
+            </div>
+            <div class="search">
+                <form action="#">
+                    <input type="submit" value="搜索">
+                    <input type="text">
+                </form>
+            </div>    
+        </div>
+        <!--logo 导航 搜索栏结束-->
+        <!--边栏 轮播图开始-->
+        <div class="main">
+            <!--轮播图-->
+            <div class="run">
+                <a class="runimg" style="opacity: 1;" href="#"><img src="img/runimg01.jpg" alt=""></a>
+                <a class="runimg" href="#"><img src="img/runimg02.jpg" alt=""></a>
+                <a class="runimg" href="#"><img src="img/runimg03.jpg" alt=""></a>
+                <a class="runimg" href="#"><img src="img/runimg04.jpg" alt=""></a>
+                <a class="runimg" href="#"><img src="img/runimg05.jpg" alt=""></a>
+                <div class="left"><</div>
+                <div class="right">></div>
+                <div class="index">
+                    <a href="#" style="background-color: rgba(255, 255, 255, 0.4);"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+            </div>
+            <!--边栏-->
+            <div class="leftBar">
+                <a href="#">手机 电话卡<span>></span></a>
+                <a href="#">电视 盒子<span>></span></a>
+                <a href="#">笔记本 平板<span>></span></a>
+                <a href="#">智能 家电<span>></span></a>
+                <a href="#">健康 家居<span>></span></a>
+                <a href="#">出行 儿童<span>></span></a>
+                <a href="#">路由器 手机配件<span>></span></a>
+                <a href="#">移动电源 插线板<span>></span></a>
+                <a href="#">耳机 音响<span>></span></a>
+                <a href="#">生活 米兔<span>></span></a>
+            </div>  
+        </div>
+        <!--边栏 轮播结束-->
+        <!--方块列表开始-->
+        <div class="theme">
+            <div class="menu">
+            	<!--无序列表-->
+                <ul>
+                	<!--方块列表截图（39*39）-->
+                    <li><a href="#"><input type="image" src="img/方块列表-选购手机.png" /><p>选购手机</p></a></li>
+                    <li><a href="#"><input type="image" src="img/方块列表-企业团购.png" /><p>企业团购</p></a></li>
+                    <li><a href="#"><input type="image" src="img/方块列表-F码通道.png" /><p>F码通道</p></a></li>
+                    <li><a href="#"><input type="image" src="img/方块列表-不限量卡.png" /><p>不限量卡</p></a></li>
+                    <li><a href="#"><input type="image" src="img/方块列表-以旧换新.png" /><p>以旧换新</p></a></li>
+                    <li><a href="#"><input type="image" src="img/方块列表-话费充值.png" /><p>话费充值</p></a></li>
+                </ul>
+            </div>
+            <div class="product">
+                <a href="#"><img src="img/方块右边图1.jpg" alt=""></a>
+                <a href="#"><img src="img/方块右边图2.jpg" alt=""></a>
+                <a href="#"><img src="img/方块右边图3.jpg" alt=""></a>
+            </div>
+        </div>
+        <!--方块列表结束-->
+        <!--小米闪购开始-->
+        <div class="shangou">
+        	<div class="sg-top">
+        		<h2 class="title">小米闪购</h2>
+        	</div>
+        	<div class="sg-sec-left">
+        			<a href="#"><img src="img/闪购倒计时.png" alt=""></a>
+        			<a href="#"><img src="img/闪购图片1.png" alt=""></a>
+        			<a href="#"><img src="img/闪购图片2.png" alt=""></a>
+        			<a href="#"><img src="img/闪购图片3.png" alt=""></a>
+        			<a href="#"><img src="img/闪购图片4.png" alt=""></a>
+        	</div>
+        	<div class="sg-sec-right">
+        		
+        	</div>
+        </div>
+        <!--小米闪购结束-->
+        <!--闪购下的宣传图开始-->
+        <div class="propaganda-1">
+        	<a href="#"><img src="img/闪购下的宣传图.jpg"/></a>
+        </div>
+        <!--闪购下的宣传图结束-->
+ 		<!--手机分类开始-->
+ 		<div class="shouji">
+	    	<div class="sj-top">
+	    		<h2 class="title">手机</h2>
+	    	</div>
+	    	<div class="sj-sec">
+	    		
+	    	</div>
+ 		</div>
+ 		<!--手机分类下的宣传图开始-->
+        <div class="propaganda-2">
+        	<a href="#"><img src="img/手机分类下的宣传图.jpg"/></a>
+        </div>
+        <!--手机分类下的宣传图开始-->
+    	<!--手机分类结束-->
+    	<!--电视分类开始-->
+    	<div class="jiadian">
+	    	<div class="jd-top">
+	    		<h2 class="title">家电</h2>
+	    	</div>
+	    	<div class="jd-sec">
+	    		
+	    	</div>
+ 		</div>
+ 		<!--家电分类下的宣传图开始-->
+        <div class="propaganda-3">
+        	<a href="#"><img src="img/家电分类下的宣传图.jpg"/></a>
+        </div>
+        <!--家电分类下的宣传图结束-->
+    	<!--电视分类结束-->
+    </section>
+    <!--主体内容结束-->
+    <!--底部内容开始-->
+    <footer>
+    	<div class="container">
+    		<div class="footer-service">
+    			<ul >
+    				<li><a href="#">预约维修服务</a></li>
+    				<li><a href="#">7天无理由退货</a></li>
+    				<li><a href="#">15天免费换货</a></li>
+    				<li><a href="#">满150元包邮</a></li>
+    				<li><a href="#">520余家售后网点</a></li>
+    			</ul>
+    		</div>
+    		<div class="footer-links">
+    			<table class="links-table">
+				    	<tr>
+				    		<th >帮助中心</th>
+				            <th >服务支持</th>
+							<th >线下门店</th>
+							<th >关于小米</th>
+				            <th >关注我们</th>
+				            <th >特色服务</th>
+				    	</tr>
+				        
+				        <tr>
+				        	 <td><a href="#" >账户管理</a></td>
+				        	 <td><a href="#" >售后政策</a></td>
+				        	 <td><a href="#" >小米之家</a></td>
+				        	 <td><a href="#" >了解小米</a></td>
+				        	 <td><a href="#" >新浪微博</a></td>
+				        	 <td><a href="#" >F码通道</a></td>
+				        </tr>
+				        
+				        <tr>
+				        	 <td><a href="#" >购物指南</a></td>
+				        	 <td><a href="#" >自助服务</a></td>
+				        	 <td><a href="#" >服务网点</a></td>
+				        	 <td><a href="#" >加入小米</a></td>
+				        	 <td><a href="#" >官方微信</a></td>
+				        	 <td><a href="#" >礼物码</a></td>
+				        </tr>
+				        
+				        <tr >
+					        <td><a href="#" >订单操作</a></td>
+				            <td><a href="#" >相关下载</a></td>
+				            <td><a href="#" >授权体验店</a></td>
+				            <td><a href="#" >投资者关系</a></td>
+				            <td><a href="#" >联系我们</a></td>
+				            <td><a href="#" >防伪查询</a></td>
+				    	</tr>
+				    </table>
+    		</div>
+    		
+    	</div>
+    	<div class="info">
+    		
+    	</div>
+    </footer>
+    <!--底部内容结束-->
+</body>
+</html>

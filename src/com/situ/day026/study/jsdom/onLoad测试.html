@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//在页面加载完之后触发这个onload方法
+			window.onload = function() {
+				var innerHtmlDiv = document.getElementById("innerHtmlDiv");
+				var innerTextDiv = document.getElementById("innerTextDiv");
+				innerHtmlDiv.innerHTML = "<span style='color:red'>innerHtml</span>";
+				innerTextDiv.innerText = "<span style='color:red'>innerText</span>";
+			}
+		</script>
+	</head>
+	<body>
+		<div id="innerHtmlDiv"></div>
+		<div id="innerTextDiv"></div>
+	</body>
+</html>

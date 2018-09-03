@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<!--		选择器分为：
+		标签选择器： p{}
+		类选择器：     .className{}
+		id选择器：     #id{}-->
+		<link rel="stylesheet" href="my.css" />
+		<style>
+			.stype1 {
+				color: red;
+				font-size: 50px;
+			}
+			
+			.stype2 {
+				color: red;
+				text-decoration: underline;
+			}
+			
+			.stype3 {
+				font-size: 50px;
+				text-decoration: underline;
+			}
+			
+			.stype4 {
+				color: blue;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p class="stype1">段落1</p>
+		<p class="stype2">段落2</p>
+		<p class="stype3">段落3</p>
+		<hr />
+		<p style="color: red; font-size: 25px;">段落文本p：使用内联样式</p>
+		<h1 class="stype4">一级标题h1：使用内部样式表</h1>
+		<h2 id="green">二级标题（h2):使用外部样式表</h2>
+	</body>
+
+</html>

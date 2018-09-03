@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<img width="250px" src="../img/1d.jpg" />
+		</div>
+		<div>
+			<input type="button" value="放大" onclick="ToBig()" />
+			<input type="button" value="缩小" onclick="ToSmall()" />
+		</div>
+	</body>
+	<script type="text/javascript">
+			var width = document.getElementsByTagName("img")[0].width;
+			//var width  = parseInt($("img").css("width"));
+			function ToBig() {
+				width = width + 5;
+				document.getElementsByTagName("img")[0].width = width;
+				//$("img").attr("width",width + "px");
+			}
+			function ToSmall(){
+				width = width - 5;
+				document.getElementsByTagName("img")[0].width = width;
+				//$("img").attr("width",width + "px");
+			}
+		</script>
+</html>

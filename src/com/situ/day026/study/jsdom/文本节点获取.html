@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload  = function() {
+				//获得div内部的文本节点
+				var dv = document.getElementsByTagName("div")[0];
+				//firstChild获得第一个子节点、lastChild获得最后一个子节点
+				console.log(dv.firstChild);
+				console.log(dv.lastChild);
+				console.log(dv.lastChild.wholeText);
+			}
+		</script>
+	</head>
+	<body>
+		<h2>文本节点获取</h2>
+		<div>
+			<li>today is monday.</li></div>
+	</body>
+</html>

@@ -1,0 +1,8 @@
+package test01;
+
+import javax.swing.JFrame;
+
+public class test03 extends JFrame {
+
+
+}

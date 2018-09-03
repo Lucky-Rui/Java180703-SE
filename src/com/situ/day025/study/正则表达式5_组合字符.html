@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//组合字符
+			
+			// \d:表示0-9之间任意一个数字[0-9]
+			var reg = /\d+/g;
+			var str = "2018/8/20";//["2018", "8", "20"]
+			// \D:表示非数字之一 等价于：[^0-9]
+			var reg = /\D+/g;
+			var str = "this is java1807%^&#$";//["this is java", "%^&#$"]
+			
+			// \w: 字母、数字、下划线其中一个字符,等价于:[a-zA-Z0-9_]
+			// \W:非字母、数字、下划线
+			var reg = /\w+/g;
+			var str = "eyr89ey@gmail.com";//["eyr89ey", "gmail", "com"]
+			
+			// \s:表示空格Space
+			// \S:表示非空格
+			var reg = /\w+\s{6}\w+/;
+			var str = "hello      beijing";//["hello      beijing"]
+			
+			// \b:表示单词的边界boundary  dhfiis issdhi  is dff
+			var reg = /\bis\b/g;
+			var str = "this is bread";
+			var newStr = str.replace(reg, "was");
+			// \B:表示非单词边界
+			var reg = /\Bis\b/;
+			var str = "hi is this a book";
+			var result = str.match(reg);
+			var newStr = str.replace(reg, "at");
+			
+			console.log(result);
+			console.log(newStr);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

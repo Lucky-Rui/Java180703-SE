@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				var cars = ['奔驰', '宝马', '奥迪'];
+				var ul = document.createElement('ul');
+				for (var i = 0; i < cars.length; i++) {
+					var li = document.createElement('li');
+					var txt = document.createTextNode(cars[i]);
+					li.appendChild(txt);
+					ul.appendChild(li);
+					
+					li.addEventListener('mousemove', function() {
+						this.style.backgroundColor = 'gray';
+					});
+					li.addEventListener('mouseout', function() {
+						this.style.backgroundColor = '';
+					});
+				}
+				document.body.appendChild(ul);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

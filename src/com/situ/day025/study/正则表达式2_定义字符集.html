@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			// 定义字符集-单次匹配
+			//[0-9]：0到9之间任意“一个”数字
+			var reg = /[0-9]/;
+			var str = "2015-3-23";// ["2"]
+			var str = "today is Monday 15:34";// ["1"]
+			
+			//[a-e]:表示a-e这些字符中的某一个字符
+			var reg = /[a-e]/;
+			var str = "hello";// ["e"]
+			var reg = /[A-E]/;
+			var str = "hEllo";// ["E"]
+			//[a-zA-Z0-9_-]:大小写字母、数字、下划线、中划线中的某一个
+			
+			var reg = /[a-zA-Z0-9_-]/;
+			var str = "%^&&_Hello-JS";// ["_"]
+			
+			var result = str.match(reg);
+			console.log(result);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

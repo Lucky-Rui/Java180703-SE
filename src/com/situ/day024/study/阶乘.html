@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script >
+			function cal() {
+				var num = document.getElementById("num").value;
+				var res = document.getElementById("sp");
+				var sum = 1;
+				if (num == "") {
+                 res.innerHTML = "输入不能为空";
+                 return;
+             }
+				if(num < 0) {
+					alert("输入为负数！");
+					return;
+				}
+				if(num == 0) {
+					sum = 1;
+					res.innerHTML = sum;
+					return;
+				} else {
+					for(var i = 1; i <= num; i++) {
+						sum = parseInt(sum) * parseInt(i);
+					}
+					res.innerHTML = sum;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num" value="" />
+		<input type="button" id="jc" value="阶乘" onclick="cal()" /> =
+		<span id="sp"></span>
+	</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//基本均衡获取0到100的随机整数
+			var random = Math.round(Math.random() * 100);
+			function cai() {
+				/*alert(random);*/
+				var getNum = document.getElementById("num").value;
+				var result = document.getElementById("sp");
+				if (getNum<0||getNum>100) {
+					result.innerHTML="请输入1到100之间的数";
+				}
+				else if(getNum == random) {
+					result.innerHTML = "恭喜你，猜对了";
+					alert("若再来一局，请刷新！")
+				}
+				else if(getNum > random) {
+					result.innerHTML = "猜大了";
+				}
+				else if(getNum < random) {
+					result.innerHTML = "猜小了";
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="num" />
+		<input type="button" value="猜" onclick="cai()" />
+		<span id="sp"></span>
+	</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//获得属性的信息
+			window.onload = function() {
+				var baidu = document.getElementsByTagName("a")[0];
+				console.log(baidu.href);//http://www.baidu.com/
+				console.log(baidu.addr);//undefined
+				console.log(baidu.getAttribute("addr"));// getName();
+				console.log(baidu.setAttribute("addr","qingdao"));//setName("zhangsan");
+				console.log(baidu.className);
+			}
+			
+			//设置属性的信息
+			function fn() {
+				var baidu = document.getElementsByTagName("a")[0];
+				baidu.href="http://www.163.com";
+				baidu.target = "_self";
+				baidu.addr="tianjin";
+				//属性修改，有就更新，没有就创建
+				baidu.setAttribute('addr','shanghai');
+				//新创建
+				baidu.setAttribute('heignt','170');
+			}
+		</script>
+	</head>
+	<body>
+		<a href="http://www.baidu.com" addr="beijing" target="_blank" class="test">超链接</a>
+		<hr/>
+		<input type="button" onclick="fn();"  value="修改属性"/>
+	</body>
+</html>

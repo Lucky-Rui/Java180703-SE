@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title></title>
+      <style type="text/css">
+         * {
+             padding: 0px;
+             margin: 0px;
+         }
+         img{
+             width: 150px;
+         }
+         .box{
+             height: 150px;
+             /*水平居中*/
+             text-align: center;
+             padding-top: 50px;
+             background-color: rgba(255,255,255,0.3);
+         }
+         body{
+             background-image: url(../../img/换肤1.jpg);
+         }
+      </style>
+   </head>
+   <body >
+      <div class="box">
+         <img src="../../img/换肤1.jpg" alt="" />
+         <img src="../../img/换肤2.jpg" alt="" />
+         <img src="../../img/换肤3.jpg" alt="" />
+         <img src="../../img/换肤4.jpg" alt="" />
+         <img src="../../img/换肤5.jpg" alt="" />
+      </div>
+   </body>
+   <script type="text/javascript">
+       window.onload = function() {
+         var images = document.getElementsByTagName("img");
+         for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function() {
+               //this代表当前设置点击事件的对象images[i]
+               var image = this.src;
+               //豆豆加加
+               //document.body.style.backgroundImage = "url("+image+")";
+               document.body.style.backgroundImage = 'url('+image+')';
+            }
+         }
+       }
+   </script>
+
+</html>
