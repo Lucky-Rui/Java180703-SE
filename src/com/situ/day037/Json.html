@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JSON数据格式</title>
+	</head>
+	<body>
+		/*JavaScript写法*/
+		<script type="text/javascript">
+		   var product = {
+		        name:'gao',
+		        age: 23,
+		        print : function() {
+		         console.log("name" + this.name + ", age: " + this.age);
+		        }
+		   }
+		   console.log(product.name);
+		   product.print()
+			
+		/*Json写法*/
+		window.onload = function() {
+		      var student = {
+		
+		         "id" : 12,
+		
+		         "name" : "zhansgan",
+		         "age" : 34,
+		         "gender" : "男"
+		     }
+		     console.log(student.name);
+		   
+		   var list = [
+		      {
+		          "id" : 12,
+		           "name" : "java1711",
+		           "age" : 20,
+		           "gender" : "男"
+		       }
+		       ,
+		       {
+		          "id" : 13,
+		           "name" : "java1712",
+		           "age" : 21,
+		           "gender" : "女",
+		           "interests" : ["篮球","足球","爬山"],
+		           "times" : [
+		            {"name" : "篮球", "time" : "2年"},
+		            {"name" : "足球", "time" : "4年"},
+		            {"name" : "爬山", "time" : "6年"},
+		           ]
+		       }
+		   ];
+		   
+		   console.log(list[1].gender); // 女
+		   console.log(list[1].interests[2]); // 爬山
+		   console.log(list[1].times[2].time); // 6年
+		}
+		</script>
+	</body>
+</html>
